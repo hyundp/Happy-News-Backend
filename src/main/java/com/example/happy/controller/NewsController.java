@@ -1,6 +1,6 @@
 package com.example.happy.controller;
 
-import com.example.happy.domain.News;
+import com.example.happy.model.News;
 import com.example.happy.service.NewsService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping("/news")
+@RequestMapping("/articles")
 public class NewsController {
 
     private final NewsService newsService;
@@ -18,8 +18,17 @@ public class NewsController {
         this.newsService = newsService;
     }
 
-    @GetMapping("/title")
-    public News getTitle(@PathVariable String title){
-        return newsService.getTitle(title);
+//    @GetMapping("/id")
+//    public News getId(@PathVariable int id){
+//        return newsService.getId(id);
+//    }
+
+    @GetMapping("/{id}")
+    public List<News> findPickData(@RequestParam String id) {
+        return newsService.getPickNews(id);
+    }
+    @GetMapping("/")
+    public List<News> findAllData() {
+        return newsService.getAllNews();
     }
 }
