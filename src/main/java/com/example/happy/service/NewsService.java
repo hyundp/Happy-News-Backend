@@ -1,12 +1,12 @@
 package com.example.happy.service;
 
-import com.example.happy.domain.News;
+import com.example.happy.model.News;
+
+import java.util.List;
 
 public interface NewsService {
-    News getId(int id);
-    News getLink(String link);
-    News getTitle(String title);
-    News getSummary(String summary);
-    News getProb(float prob);
+
+    List<News> getAllNews();
+    List<News> getPickNews(String id);
 
 }
