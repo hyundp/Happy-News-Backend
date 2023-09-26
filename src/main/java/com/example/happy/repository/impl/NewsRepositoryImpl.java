@@ -58,7 +58,6 @@ public class NewsRepositoryImpl implements NewsRepository {
 
         AggregationResults<News> results = this.mongoTemplate.aggregate(aggregation, "news", News.class);
         return results.getMappedResults();
-
     }
 
     @Override

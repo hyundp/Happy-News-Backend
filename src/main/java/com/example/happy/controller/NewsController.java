@@ -6,7 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
-@CrossOrigin(originPatterns="https://happynews-alpha.vercel.app", allowedHeaders = "*")
+@CrossOrigin(origins="https://happynews-alpha.vercel.app")
 @RestController
 @RequestMapping("/articles")
 public class NewsController {
