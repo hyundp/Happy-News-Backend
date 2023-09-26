@@ -18,16 +18,13 @@ public class NewsController {
         this.newsService = newsService;
     }
 
-//    @GetMapping("/id")
-//    public News getId(@PathVariable int id){
-//        return newsService.getId(id);
-//    }
+
 
     @GetMapping("/{id}")
-    public List<News> findPickData(@RequestParam String id) {
+    public List<News> findPickData(@PathVariable String id) {
         return newsService.getPickNews(id);
     }
-    @GetMapping("/")
+    @GetMapping("")
     public List<News> findAllData() {
         return newsService.getAllNews();
     }
